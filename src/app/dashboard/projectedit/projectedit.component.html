@@ -1,0 +1,44 @@
+
+<br />
+<div *ngIf="msg" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>SUCCESS!</strong> Project updated succesfully.
+    <button (click)="removemsg()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <p>Add Project</p>
+            </div>
+         
+            <div class="card-body">
+                <form [formGroup]="editproject" >
+                <div class="row">
+                    <label>Name</label>
+                    <input type="text" formControlName="name" placeholder="enter name" class="form-control"/>
+                </div>
+                <br />
+                <div class="row">
+                    <label>Duration</label>
+                    <input type="text" formControlName="duration" placeholder="enter duration" class="form-control"/>
+                </div>
+                <br />
+                <div class="row">
+                    <label>Client Id</label>
+                    <input type="text" formControlName="cid" placeholder="enter client Id" class="form-control"/>
+                </div>
+                <br />
+                <div>
+                    <button  (click)="updatedata()"   class="btn btn-primary">Update project</button>
+                    &nbsp; &nbsp; &nbsp; &nbsp;
+                    <button  routerLink="/projectinfo"   class="btn btn-secondary">Back</button>
+                    
+                </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-3"></div>
+</div>

@@ -1,0 +1,98 @@
+
+<br />
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Add New meeting
+</button>
+<h3 style="text-align: center; ">Meeting List</h3>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div *ngIf="msg" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>SUCCESS!</strong> Meeting added succesfully.
+        <button (click)="removemsg()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Meeting</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+        <form [formGroup]="addmeeting" >
+          <div class="row">
+          <label>Meeting Id</label>
+          <input type="text" formControlName="id" placeholder="Enter meeting id" class="form-control"/>
+          </div>
+          <br />
+          <div class="row">
+              <label>Meeting topic</label>
+              <input type="text" formControlName="topic" placeholder="Enter meeting topic" class="form-control"/>
+          </div>
+          <br />
+          <div class="row">
+              <label>No of people</label>
+              <input type="text" formControlName="peopleno" placeholder="Enter no peolple" class="form-control"/>
+          </div>
+          <br />
+          <div class="row">
+              <label>start data and time</label>
+              <input type="datetime-local" formControlName="start_date_time" placeholder="Enter date and time" class="form-control"/>
+          </div>
+          <div class="row">
+            <label>Status</label>
+            <input type="text" formControlName="status" placeholder="Enter meeting status" class="form-control"/>
+        </div>
+        <br />
+        <div class="row">
+          <label>Client Id</label>
+          <input type="text" formControlName="cid" placeholder="Enter client id" class="form-control"/>
+      </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" (click)="savedata()"class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+  <div class="card">
+    <table class="table" style="text-align: center;">
+        <thead style="--bs-table-bg:rgb(158, 90, 100);">
+        <tr>
+            <th scope="col">Meeting Id</th>
+            <th scope="col">Meeting Topic</th>
+            <th scope="col">No of people</th>
+            <th scope="col">Start Date and Time</th>
+            <th scope="col">Status</th>
+            <th scope="col">Client Id</th>
+            <th scope="col">operations</th>
+            
+        </tr>
+        </thead>
+        <tbody style="text-align: center;">
+        <tr *ngFor="let item of meetingData">
+            <th scope="row">{{item.id}}</th>
+            <td>{{item.topic}}</td>
+            <td>{{item.peopleno}}</td>
+            <td>{{item.start_date_time}}</td>
+            <td>{{item.status}}</td>
+            <td>{{item.cid}}</td>
+            <td><button (click)="deleteEachmeeting(item.id)"class="btn btn-danger">Delete</button></td>
+        </tr>
+        
+            
+        </tbody>
+    </table>
+  </div>
+  </div>
+    <div class="col-md-2"></div>
+  </div>
+    
+   

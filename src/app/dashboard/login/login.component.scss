@@ -1,0 +1,38 @@
+input.ng-touched.ng-valid{
+    border: 2px green solid;
+    border-radius: 8px;
+}
+input.ng-touched.ng-invalid{
+    border: 2px red solid;
+}
+.error
+{
+    color: red;
+}
+select.ng-touched.ng-valid{
+    border: 2px green solid;
+}
+select.ng-touched.ng-invalid{
+    border: 2px red solid;
+}
+input.ng-untouched.submit{
+    border: 2px red solid;
+}
+
+.card{
+    margin-top: 10px;
+    border:none;
+    width: 500px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    margin-top: 40%;
+    
+    transform:translate(-50%,-50%);
+    background: rgb(65, 72, 77);
+    background: linear-gradient();
+    color: beige;
+
+
+}

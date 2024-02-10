@@ -1,0 +1,83 @@
+{
+  "client": [
+    {
+      "name": "Flipkart",
+      "address": "Bangalore",
+      "email": "flipkart@gmail.com",
+      "password": "f@123",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "name": "Canara Bank",
+      "address": "Mumbai",
+      "email": "canara@gmail.com",
+      "password": "c@123"
+    },
+    {
+      "id": "3",
+      "name": "Phone pay",
+      "address": "Hyderabad",
+      "email": "phonepe@gmail.com",
+      "password": "p@123"
+    }
+  ],
+  "Project": [
+    {
+      "name": "online application",
+      "duration": "4 months",
+      "cid": "2",
+      "id": "11"
+    },
+    {
+      "id": "12",
+      "name": "Secured transaction",
+      "duration": "8months",
+      "cid": "3"
+    },
+    {
+      "id": "13",
+      "name": "Website",
+      "duration": "3months",
+      "cid": "1"
+    }
+  ],
+  "ProjectTask": [
+    {
+      "id": "101",
+      "name": "User Interface",
+      "discription": "In this project,the task is to creat online application for the bank",
+      "pid": "11"
+    },
+    {
+      "id": "102",
+      "name": "Account managing",
+      "discription": "In this project,the task is to manage multiple accounts",
+      "pid": "12"
+    },
+    {
+      "id": "103",
+      "name": "Admin",
+      "discription": "In this project,the task is to creat admin page for the flipkart website",
+      "pid": "13"
+    }
+  ],
+  "Meeting": [
+    {
+      "id": "1001",
+      "topic": "project status",
+      "peopleno": 3,
+      "start_date_time": "07-03-2024",
+      "status": "open",
+      "cid": "2"
+    },
+    {
+      "id": "1002",
+      "topic": "project team creating",
+      "peopleno": 10,
+      "start_date_time": "03-01-2024",
+      "status": "closed",
+      "cid": "1"
+    }
+  ]
+}

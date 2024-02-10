@@ -1,0 +1,91 @@
+<br />
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Add Task
+  </button>
+  <h3 style="text-align: center;">Project Task Information</h3>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div *ngIf="msg" class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>SUCCESS!</strong> Task added succesfully.
+          <button (click)="removemsg()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Task</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+            
+            
+            <form [formGroup]="addtask" style="padding: 5px;">
+                <div class="row">
+                    <label>Id</label>
+                        <input type="text" formControlName="id" placeholder="enter id" class="form-control"/>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <label>Task Name</label>
+                        <input type="text" formControlName="name" placeholder="enter task name" class="form-control"/>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <label>Discription</label>
+                        <textarea formControlName="discription" placeholder="enter task discription" class="form-control"></textarea>
+                    </div>
+                    <br />
+                    <div class="row">
+                      <label>Project Id</label>
+                      <input type="text" formControlName="pid" placeholder="Enter project " class="form-control"/>
+                      <br>
+                  </div>
+                    
+            </form> 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button"(click)=savedata() class="btn btn-primary">Add task</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="card">
+    <table class="table" style="text-align: center;">
+      
+        <thead style="--bs-table-bg:rgb(158, 90, 100);">
+        <tr>
+            <th scope="col">Task Id</th>
+            <th scope="col">Task Name</th>
+            <th scope="col">Task Discription</th>
+            <th scope="col">Project Id</th>
+            <th scope="col">Operation</th>
+           
+          
+        </tr>
+        
+        </thead>
+      
+        <tbody>
+        <tr *ngFor="let item of taskData">
+            <th scope="row">{{item.id}}</th>
+            <td>{{item.name}}</td>
+            <td>{{item.discription}}</td>
+            <td>{{item.pid}}</td>
+            <td><button (click)="deleteEachtask(item.id)"class="btn btn-danger">Delete</button></td>
+          
+        </tr>
+        
+            
+        </tbody>
+    </table>
+      </div>
+    <div class="col-md-2"></div>
+  </div>
+    
+   

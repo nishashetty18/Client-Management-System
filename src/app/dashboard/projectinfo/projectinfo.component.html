@@ -1,0 +1,93 @@
+<br />
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Add New Project
+</button>
+<h3 style="text-align: center;">Project Information</h3>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div *ngIf="msg" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>SUCCESS!</strong> Project added succesfully.
+        <button (click)="removemsg()" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Project</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+        <form [formGroup]="addproject" >
+          <div class="row">
+          <label>Project Id</label>
+          <input type="text" formControlName="id" placeholder="enter project id" class="form-control"/>
+          </div>
+          <br />
+          <div class="row">
+              <label>Project Name</label>
+              <input type="text" formControlName="name" placeholder="enter project name" class="form-control"/>
+          </div>
+          <br />
+          <div class="row">
+              <label>Project Duration</label>
+              <input type="text" formControlName="duration" placeholder="enter project duration" class="form-control"/>
+          </div>
+          <br />
+          <div class="row">
+              <label>Client Id</label>
+              <input type="text" formControlName="cid" placeholder="enter client id" class="form-control"/>
+          </div>
+          <br />
+          
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" (click)="savedata()"class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+   
+
+
+
+
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+  <div class="card">
+    <table class="table" style="text-align: center;">
+        <thead style="--bs-table-bg:rgb(158, 90, 100);">
+        <tr>
+            <th scope="col">Project Id</th>
+            <th scope="col">Project Name</th>
+            <th scope="col">Project Duration</th>
+            <th scope="col">Client Id</th>
+            <th scope="col">operations</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of projectdata">
+            <th scope="row">{{item.id}}</th>
+            <td>{{item.name}}</td>
+            <td>{{item.duration}}</td>
+            <td>{{item.cid}}</td>
+            
+            <td ><button routerLink="/projectedit/{{item.id}}" class="btn btn-primary">Edit</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <button (click)="deleteEachProject(item.id)"class="btn btn-danger">Delete</button></td>
+        </tr>
+        
+            
+        </tbody>
+    </table>
+  </div>
+  </div>
+    <div class="col-md-2"></div>
+  </div>
+    
+   
